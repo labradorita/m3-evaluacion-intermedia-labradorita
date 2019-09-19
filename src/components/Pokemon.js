@@ -1,16 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-class Card extends React.Component {
+class Pokemon extends React.Component {
   render() {
-    const { name, url, types } = this.props;
+    const { name, url, key } = this.props;
     return (
       <div className="card">
         <img className="img" src={url} alt={name} />
         <h2 className="title">{name}</h2>
         <ul className="types">
-          {types.map((type, id) => {
+          {this.props.types.map(type => {
             return (
-              <li className="type" key={id}>
+              <li className="type" key={key}>
                 {type}
               </li>
             );
@@ -21,4 +22,10 @@ class Card extends React.Component {
   }
 }
 
-export default Card;
+Pokemon.propTypes = {
+  name: PropTypes.string,
+  url: PropTypes.string,
+  key: PropTypes.number
+};
+
+export default Pokemon;
