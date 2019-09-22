@@ -1,0 +1,12 @@
+.item {
+  width: 160px;
+}
+
+.listPoke {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 25px;
+  justify-content: center;
+  margin: 40px;
+}
